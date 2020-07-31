@@ -19,7 +19,7 @@ print("")
 list3 = []
 
 for i in list1:
-    if i in list2:
+    if i in list2 and i not in list3:
         list3.append(i)
 
 print("This is the commons items between the two lists :")
