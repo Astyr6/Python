@@ -53,7 +53,7 @@ while True:
 
         elif lvl == "6": num = random.randint(1, 1000000001); print("Between 1 and 1000000000")
 
-        elif lvl == "opgp": num = random.randint(1, 1000000000001); print("ULTRA HADRCORE DIFFICULTY, RANGE 1 TO 1 TRILLION")
+        elif lvl == "opgp": num = random.randint(1, 1000000000001); print("ULTRA HARDCORE DIFFICULTY, RANGE 1 TO 1 TRILLION")
 
         else: clear(); continue
 
@@ -61,7 +61,7 @@ while True:
         
         while True:
             try:
-                ipt = int(input("Type you guess > "))
+                ipt = int(input("Type your guess > "))
                 if ipt == num:
                     break
                 else:
@@ -82,7 +82,7 @@ while True:
 
         print("")
         print("--------------------------------------------------")
-        print("You guessed tne number " + str(num) + " in " + str(tries) + " try/ies !")
+        print("You guessed the number " + str(num) + " in " + str(tries) + " try/ies !")
         print("--------------------------------------------------")
         print("")
         getpass("Press Enter to continue...")
