@@ -34,16 +34,34 @@ def standardPassword(length = 16):
             pw += random.choice(numbers)
     return pw
 
+def strongPassword(length = 16):
+    pw = ""
+    for i in range(1, length + 1):
+        c = random.choice(range(1,9))
+        if c <= 3 and c < 3:
+            pw += random.choice(lowercaseAlphabet)
+        elif c > 3 and c < 6:
+            pw += random.choice(uppercaseAlphabet)
+        elif c == 6 or c == 7:
+            pw += random.choice(numbers)
+        elif c == 8:
+            pw += random.choice(symbols)
+    return pw
 
-for i in range(1,17):
-    c = random.choice(range(1,10))
-    if c >= 1 and c <= 3:
-        pwgen += random.choice(lowercaseAlphabet)
-    if c >= 4 and c <= 6:
-        pwgen += random.choice(uppercaseAlphabet)
-    if c >= 7 and c <= 8:
-        pwgen += random.choice(numbers)
-    if c >= 8 and c <= 9:
-        pwgen += random.choice(symbols)
+def superStrongPassword(length = 20):
+    pw = ""
+    for i in range(1, length + 1):
+        c = random.choice(range(1,11))
+        if c <= 3 and c < 3:
+            pw += random.choice(lowercaseAlphabet)
+        elif c > 3 and c < 6:
+            pw += random.choice(uppercaseAlphabet)
+        elif c == 6 or c == 7 or c == 8:
+            pw += random.choice(numbers)
+        elif c > 8:
+            pw += random.choice(symbols)
+    return pw
 
-print(standardPassword())
+
+
+print(superStrongPassword())
