@@ -53,6 +53,8 @@ while True:
 
         elif lvl == "6": num = random.randint(1, 1000000001); print("Between 1 and 1000000000")
 
+        elif lvl == "opgp": num = random.randint(1, 1000000000001); print("ULTRA HADRCORE DIFFICULTY, RANGE 1 TO 1 TRILLION")
+
         else: clear(); continue
 
         print("")
@@ -79,9 +81,9 @@ while True:
                 
 
         print("")
-        print("------------------------------------------")
+        print("--------------------------------------------------")
         print("You guessed tne number " + str(num) + " in " + str(tries) + " try/ies !")
-        print("------------------------------------------")
+        print("--------------------------------------------------")
         print("")
         getpass("Press Enter to continue...")
         clear()
