@@ -1,0 +1,1 @@
+pyinstaller --icon=ico.ico --onefile FileEncryptor.py

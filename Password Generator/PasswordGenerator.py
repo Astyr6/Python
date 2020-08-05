@@ -14,6 +14,7 @@ numbers = "0123456789"
 symbols = "~`!@#$%^&*()_-+={[}]|\:;\"'<,>.?/"
 pwgen = ""
 
+
 # GUI FUNCTIONS
 
 def gui_header():
@@ -21,6 +22,7 @@ def gui_header():
     print("Password Generator")
     print("==================================================")
     print("")
+
 
 def gui_list():
     print("Password strength :")
@@ -34,6 +36,7 @@ def gui_list():
     print("-------------------")
     print("(0) Quit")
     print("")
+
 
 # INPUT HANDLING FUNCTIONS
 
@@ -50,6 +53,7 @@ def int_input(text, default):
         except ValueError:
             max_tries -= 1
             print("Bad value: {!r}. Try again...".format(result))
+
 
 def bool_input(text, default):
     max_tries = 3
@@ -78,6 +82,7 @@ def veryWeakPassword():
 
     return "".join(str_var)
 
+
 def weakPassword():
     length = int_input("Length ? (Default 8) > ", 8)
     pw = ""
@@ -89,14 +94,15 @@ def weakPassword():
 
     return "".join(str_var)
 
+
 def standardPassword():
     length = int_input("Length ? (Default 12) > ", 12)
     pw = ""
     for i in range(1, length + 1):
-        c = random.choice(range(1,7))
-        if c in range(1,4):
+        c = random.choice(range(1, 7))
+        if c in range(1, 4):
             pw += random.choice(lowercaseAlphabet)
-        elif c in range(4,6):
+        elif c in range(4, 6):
             pw += random.choice(uppercaseAlphabet)
         elif c == 6:
             pw += random.choice(numbers)
@@ -105,16 +111,17 @@ def standardPassword():
 
     return "".join(str_var)
 
+
 def strongPassword():
     length = int_input("Length ? (Default 16) > ", 16)
     pw = ""
     for i in range(1, length + 1):
-        c = random.choice(range(1,9))
-        if c in range(1,4):
+        c = random.choice(range(1, 9))
+        if c in range(1, 4):
             pw += random.choice(lowercaseAlphabet)
         elif c in range(4, 6):
             pw += random.choice(uppercaseAlphabet)
-        elif c in range(6,8):
+        elif c in range(6, 8):
             pw += random.choice(numbers)
         elif c == 8:
             pw += random.choice(symbols)
@@ -124,18 +131,19 @@ def strongPassword():
 
     return "".join(str_var)
 
+
 def superStrongPassword():
     length = int_input("Length ? (Default 32) > ", 32)
     pw = ""
     for i in range(1, length + 1):
-        c = random.choice(range(1,11))
-        if c in range(1,3):
+        c = random.choice(range(1, 11))
+        if c in range(1, 3):
             pw += random.choice(lowercaseAlphabet)
-        elif c in range(3,6):
+        elif c in range(3, 6):
             pw += random.choice(uppercaseAlphabet)
-        elif c in range(6,9):
+        elif c in range(6, 9):
             pw += random.choice(numbers)
-        elif c in range(9,11):
+        elif c in range(9, 11):
             pw += random.choice(symbols)
 
     str_var = list(pw)
@@ -145,7 +153,6 @@ def superStrongPassword():
 
 
 def customPassword():
- 
     length = 16
     uppercase = True
     number = True
@@ -164,12 +171,12 @@ def customPassword():
     if number:
         numOfNumbers = int_input("Number of numbers ? (Default 2, Max = Length / 2) > ", 2)
     if numOfNumbers > length / 2:
-        numOfNumbers = length // 2 
+        numOfNumbers = length // 2
 
     if symbol:
         numOfSymbols = int_input("Number of Symbols ? (Default 2, Max = Length / 2) > ", 2)
     if numOfSymbols > length / 2:
-        numOfSymbols = length // 2 
+        numOfSymbols = length // 2
 
     pw = ""
 
@@ -192,6 +199,7 @@ def customPassword():
 
     return "".join(str_var)
 
+
 # =========
 # MAIN CODE
 # =========
@@ -207,7 +215,7 @@ while True:
     ipt = int()
 
     try:
-        ipt =  int(input("Choice > "))
+        ipt = int(input("Choice > "))
     except ValueError:
         continue
 
